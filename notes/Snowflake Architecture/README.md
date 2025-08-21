@@ -5,7 +5,7 @@
 1. [Traditional Database Architectures](#1-traditional-database-architectures)  
    - [Shared Disk Architecture](#shared-disk-architecture)  
    - [Share Nothing Architecture](#share-nothing-architecture)  
-   - [Multi-Cluster Shared Data Architecture](#snowflake's-multi-cluster-shared-data-architecture)
+   - [Snowflake's Multi-Cluster Shared Data Architecture](#snowflakes-multi-cluster-shared-data-architecture)
 
 2. [Snowflake’s Three Architecture Layers](#2-snowflake-s-three-architecture-layers)  
    - [Storage Layer Details](#storage-layer-details)  
@@ -111,7 +111,9 @@ The [Snowflake Architecture](https://docs.snowflake.com/en/user-guide/intro-key-
 
 ![Snowflake Architecture](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/architecture-overview.png)
 
-1. **[Storage Layer Details](https://docs.snowflake.com/en/user-guide/intro-key-concepts#database-storage)**
+1. Storage Layer Details
+
+**[Storage Layer Details](https://docs.snowflake.com/en/user-guide/intro-key-concepts#database-storage)**
 
 - Stores structured and semi-structured data (e.g., JSON, Avro, Parquet).
 - Automatically compressed, encrypted, and distributed across cloud storage (AWS S3, Azure Blob, or GCP).
