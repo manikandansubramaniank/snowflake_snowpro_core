@@ -6,7 +6,7 @@
 - **Shared Nothing Architecture:** Each node independently manages CPU, memory, and storage. Offers scalability and high availability but with more complex data management.
 - **Snowflake's Multi-Cluster Shared Data Architecture:** Combines centralized persistent storage with multiple independent compute clusters caching data locally for strong performance and scalability.
 
-![Database Architectures](https://docs.snowflake.com/_images/architecture.svg)  
+![Database Architectures](https://docs.snowflake.com/en/_images/architecture-overview.png)  
 *Source: Snowflake Architecture Overview*
 
 Learn more: [Snowflake Architecture Overview](https://docs.snowflake.com/en/user-guide/architecture-overview.html)
@@ -21,7 +21,7 @@ Learn more: [Snowflake Architecture Overview](https://docs.snowflake.com/en/user
 | **Compute Layer**    | Virtual warehouses made of scalable compute clusters (one or many nodes). | Executes query processing at scale.        |
 | **Cloud Services Layer** | The "brain" handling authentication, access control, metadata, query parsing/optimization, and infrastructure management. | Coordinates system activities.              |
 
-![Snowflake Layered Architecture](https://docs.snowflake.com/_images/architecture-slices.svg)  
+![Snowflake Layered Architecture](https://docs.snowflake.com/en/_images/architecture-overview.png)  
 *Source: Snowflake Documentation*
 
 References:  
