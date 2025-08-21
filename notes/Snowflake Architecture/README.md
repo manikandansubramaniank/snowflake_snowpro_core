@@ -1,4 +1,47 @@
-# Snowflake Architecture and Concepts 
+# Snowflake Architecture and Concepts
+
+## 📘 Table of Contents
+
+1. [Traditional Database Architectures](#1-traditional-database-architectures)  
+   - [Shared Disk Architecture](#shared-disk-architecture)  
+   - [Share Nothing Architecture](#share-nothing-architecture)  
+   - [Multi-Cluster Shared Data Architecture](#snowflake-s-multi-cluster-shared-data-architecture)
+
+2. [Snowflake’s Three Architecture Layers](#2-snowflake-s-three-architecture-layers)  
+   - [Storage Layer Details](#storage-layer-details)  
+   - [Compute Warehouses](#compute-warehouses)  
+   - [Cloud Services Overview](#cloud-services-overview)  
+   - [How It Works Together](#how-it-works-together)  
+   - [Key Benefits](#key-benefits)
+
+3. [Loading Data into Snowflake](#3-loading-data-into-snowflake)
+
+4. [Snowflake Editions and Features](#4-snowflake-editions-and-features)  
+   - [Standard Edition](#standard-edition)  
+   - [Enterprise Edition](#enterprise-edition)  
+   - [Business Critical Edition](#business-critical-edition-formerly-enterprise-for-sensitive-data)  
+   - [Virtual Private Snowflake (VPS)](#virtual-private-snowflake-vps)
+
+5. [Pricing Components](#5-pricing-components)  
+   - [Compute Cost](#compute-cost)  
+   - [Cloud Services Cost](#cloud-services-cost)  
+   - [Storage Cost](#storage-cost)  
+   - [Data Transfer Cost](#data-transfer-cost)
+
+6. [Storage Monitoring](#6-storage-monitoring)
+
+7. [Resource Monitors](#7-resource-monitors)
+
+8. [Warehouse Scaling](#8-warehouse-scaling)  
+   - [Warehouse Types](#types)  
+   - [Warehouse Sizes](#size)  
+   - [Multi-Cluster Warehouse](#multi-cluster-warehouse)  
+   - [Scaling Policy](#scaling-policy)
+
+9. [Object Hierarchy in Snowflake](#9-object-hierarchy-in-snowflake)
+
+10. [SnowSQL Command Line Tool](#10-snowsql-command-line-tool)
+
 
 ## 1. Traditional Database Architectures
 
@@ -66,6 +109,8 @@ The Shared-Nothing Architecture is a distributed computing model where each node
 
 The [Snowflake Architecture](https://docs.snowflake.com/en/user-guide/intro-key-concepts#snowflake-architecture) is a modern, cloud-native data platform design that separates compute, storage, and services layers. This separation allows for independent scaling, high concurrency, and efficient data sharing.
 
+![Snowflake Architecture](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/architecture-overview.png)
+
 1. **[Storage Layer Details](https://docs.snowflake.com/en/user-guide/intro-key-concepts#database-storage)**
 
 - Stores structured and semi-structured data (e.g., JSON, Avro, Parquet).
@@ -102,41 +147,46 @@ The [Snowflake Architecture](https://docs.snowflake.com/en/user-guide/intro-key-
 - Support for semi-structured data natively.
 - Cross-cloud and cross-region capabilities.
 
-### Snowflake Architecture Overview
-
-References:  
-- [Storage Layer Details](https://docs.snowflake.com/en/user-guide/intro-key-concepts#database-storage)  
-- [Compute Warehouses](https://docs.snowflake.com/en/user-guide/intro-key-concepts#query-processing)  
-- [Cloud Services Overview](https://docs.snowflake.com/en/user-guide/intro-key-concepts#cloud-services)
-
 ---
 
 ## 3. Loading Data into Snowflake
 
-- **Create Database and Table:**
-
 ```sql
 
-CREATE DATABASE first_db;
-CREATE TABLE "loan_payment" ( "ID" INT, "NAME" STRING, "AMOUNT" FLOAT );
+// Create database
+CREATE DATABASE IF NOT EXISTS MANI_SN_DB;
 
-```
+USE DATABASE MANI_SN_DB;
 
-- **Load Data from Cloud Storage:**
+CREATE SCHEMA IF NOT EXISTS SN_SCH_MA;
 
-```sql
+USE SCHEMA SN_SCH_MA;
 
-COPY INTO loan_payment
-FROM 's3://your-bucket/loan_payment.csv'
-FILE_FORMAT = (TYPE => 'CSV', FIELD_DELIMITER => ',', SKIP_HEADER => 1);
+// Create the table + meta data
+CREATE OR REPLACE TABLE "MANI_SN_DB"."SN_SCH_MA"."LOAN_PAYMENT" (
+  "Loan_ID" STRING,
+  "loan_status" STRING,
+  "Principal" STRING,
+  "terms" STRING,
+  "effective_date" STRING,
+  "due_date" STRING,
+  "paid_off_time" STRING,
+  "past_due_days" STRING,
+  "age" STRING,
+  "education" STRING,
+  "Gender" STRING);
+  
+  
+ SELECT * FROM MANI_SN_DB.SN_SCH_MA.LOAN_PAYMENT;
 
-```
 
-- **Query Validation:**
-
-```sql
-
-SELECT * FROM loan_payment;
+ // Loading the data from S3 bucket
+  
+ COPY INTO LOAN_PAYMENT
+    FROM s3://bucketsnowflakes3/Loan_payments_data.csv
+    file_format = (type = csv 
+                   field_delimiter = ',' 
+                   skip_header=1);
 
 ```
 
@@ -445,11 +495,11 @@ CREATE WAREHOUSE MY_WH
 
 ---
 
-## 8. Object Hierarchy in Snowflake
+## 9. Object Hierarchy in Snowflake
 
 In Snowflake, an object is any named entity that you can create, manage, and use within your account. These objects are organized hierarchically and serve different purposes across data storage, compute, security, and governance.
 
-![Object hierarchy](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/securable-objects-hierarchy)
+![Object hierarchy](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/securable-objects-hierarchy.png)
 
 **Database Objects**
 These are used to store and manage data.
@@ -496,7 +546,7 @@ These are used to store and manage data.
 
 ---
 
-## 9. SnowSQL Command Line Tool
+## 10. SnowSQL Command Line Tool
 
 - Command-line client for query execution and administration.
 - Supports Windows, Linux, MacOS.
