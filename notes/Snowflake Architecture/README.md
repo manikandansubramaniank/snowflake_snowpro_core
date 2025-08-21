@@ -5,7 +5,7 @@
 1. [Traditional Database Architectures](#1-traditional-database-architectures)  
    - [Shared Disk Architecture](#shared-disk-architecture)  
    - [Share Nothing Architecture](#share-nothing-architecture)  
-   - [Multi-Cluster Shared Data Architecture](#snowflake-s-multi-cluster-shared-data-architecture)
+   - [Multi-Cluster Shared Data Architecture](#snowflake's-multi-cluster-shared-data-architecture)
 
 2. [Snowflake’s Three Architecture Layers](#2-snowflake-s-three-architecture-layers)  
    - [Storage Layer Details](#storage-layer-details)  
