@@ -9,7 +9,7 @@
 ![Database Architectures](https://docs.snowflake.com/en/_images/architecture-overview.png)  
 *Source: Snowflake Architecture Overview*
 
-Learn more: [Snowflake Architecture Overview](https://docs.snowflake.com/en/user-guide/architecture-overview.html)
+Learn more: [Snowflake Architecture Overview](https://docs.snowflake.com/en/user-guide/intro-key-concepts#snowflake-architecture)
 
 ---
 
@@ -21,7 +21,7 @@ Learn more: [Snowflake Architecture Overview](https://docs.snowflake.com/en/user
 | **Compute Layer**    | Virtual warehouses made of scalable compute clusters (one or many nodes). | Executes query processing at scale.        |
 | **Cloud Services Layer** | The "brain" handling authentication, access control, metadata, query parsing/optimization, and infrastructure management. | Coordinates system activities.              |
 
-![Snowflake Layered Architecture](https://docs.snowflake.com/en/_images/architecture-overview.png)  
+![Snowflake Layered Architecture](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/architecture-overview.png)  
 *Source: Snowflake Documentation*
 
 References:  
