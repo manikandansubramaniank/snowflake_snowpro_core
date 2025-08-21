@@ -26,6 +26,8 @@ The Shared Disk Architecture is a type of database or computing architecture whe
 - **Storage I/O contention:** All nodes accessing the same disk can lead to performance issues.
 - **Complexity:** Requires sophisticated software to manage concurrency and consistency.
 
+![Shared Disk vs Shared Nothing](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/shared-disk_vs_share-nothing.png) 
+
 ### Share Nothing Architecture
 
 The Shared-Nothing Architecture is a distributed computing model where each node in the system is independent and self-sufficient, with no shared memory or disk.
@@ -55,8 +57,6 @@ The Shared-Nothing Architecture is a distributed computing model where each node
 
 ###  Snowflake's Multi-Cluster Shared Data Architecture:
 - Combines centralized persistent storage with multiple independent compute clusters caching data locally for strong performance and scalability.
-
-![Shared Disk vs Shared Nothing](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/shared-disk_vs_share-nothing.png)  
 
 ![Multi-Cluster Shared Data Architecture](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/multi_cluster_shared_disk.png)  
 
