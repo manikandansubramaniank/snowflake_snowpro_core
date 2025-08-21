@@ -7,7 +7,7 @@
    - [Share Nothing Architecture](#share-nothing-architecture)  
    - [Snowflake's Multi-Cluster Shared Data Architecture](#snowflakes-multi-cluster-shared-data-architecture)
 
-2. [Snowflake’s Three Architecture Layers](#2-snowflake-s-three-architecture-layers)  
+2. [Snowflake’s Three Architecture Layers](#2-snowflakes-three-architecture-layers)  
    - [Storage Layer Details](#storage-layer-details)  
    - [Compute Warehouses](#compute-warehouses)  
    - [Cloud Services Overview](#cloud-services-overview)  
@@ -111,7 +111,7 @@ The [Snowflake Architecture](https://docs.snowflake.com/en/user-guide/intro-key-
 
 ![Snowflake Architecture](https://github.com/manikandansubramaniank/snowflake_snowpro_core/blob/main/notes/Snowflake%20Architecture/architecture-overview.png)
 
-1. Storage Layer Details
+### 1. Storage Layer Details
 
 **[Storage Layer Details](https://docs.snowflake.com/en/user-guide/intro-key-concepts#database-storage)**
 
@@ -119,14 +119,18 @@ The [Snowflake Architecture](https://docs.snowflake.com/en/user-guide/intro-key-
 - Automatically compressed, encrypted, and distributed across cloud storage (AWS S3, Azure Blob, or GCP).
 - Fully managed by Snowflake—users don’t manage indexes or partitions.
 
-2. **[Compute Warehouses](https://docs.snowflake.com/en/user-guide/intro-key-concepts#query-processing)**
+### 2. Compute Warehouse
+
+**[Compute Warehouses](https://docs.snowflake.com/en/user-guide/intro-key-concepts#query-processing)**
 
 - Independent compute clusters called Virtual Warehouses.
 - Each warehouse can access the same data without contention.
 - Supports multi-cluster warehouses for high concurrency.
 - Warehouses can be paused/resumed and scaled independently.
 
-3. **[Cloud Services Overview](https://docs.snowflake.com/en/user-guide/intro-key-concepts#cloud-services)**
+### 3. Cloud Services Overview
+
+**[Cloud Services Overview](https://docs.snowflake.com/en/user-guide/intro-key-concepts#cloud-services)**
 
 - Manages metadata, query parsing, optimization, access control, and transactions.
 - Acts as the brain of the platform.
@@ -202,7 +206,7 @@ CREATE OR REPLACE TABLE "MANI_SN_DB"."SN_SCH_MA"."LOAN_PAYMENT" (
 
 Snowflake offers four main editions, each designed to meet different organizational needs, with increasing levels of features, security, and support:
 
-1. **Standard Edition**
+#### 1. Standard Edition
 
 **Target:** Small to medium businesses or teams starting with Snowflake.
 **Features:**
@@ -212,7 +216,7 @@ Snowflake offers four main editions, each designed to meet different organizatio
 - Basic security and governance
 - Native support for semi-structured data (JSON, Avro, Parquet, etc.).
 
-2. **Enterprise Edition**
+#### 2. Enterprise Edition
 
 **Target:** Larger organizations needing more advanced features.
 - Includes all Standard features, plus:
@@ -222,7 +226,7 @@ Snowflake offers four main editions, each designed to meet different organizatio
 - Resource monitors
 - Custom roles and access policies
 
-3. **Business Critical Edition** (formerly Enterprise for Sensitive Data)
+#### 3. Business Critical Edition (formerly Enterprise for Sensitive Data)
 
 **Target:** Organizations with sensitive or regulated data (e.g., healthcare, finance).
 
@@ -232,7 +236,7 @@ Snowflake offers four main editions, each designed to meet different organizatio
 - Network policies and private connectivity
 - Account failover/failback for disaster recovery
 
-4. **Virtual Private Snowflake (VPS)**
+#### 4. Virtual Private Snowflake (VPS)
 
 **Target:** Organizations with the highest security requirements (e.g., government, financial institutions).
 
@@ -434,7 +438,7 @@ In Snowflake, a [Virtual Warehouse](https://docs.snowflake.com/en/user-guide/war
 
 Warehouse can be created using ACCOUNTADMIN, SECURITYADMIN or SYSADMIN
 
-**Types**
+### Types
 
 |Feature				|Standard Warehouse						|Snowpark-Optimized Warehouse								|
 |:----------------------|:--------------------------------------|:----------------------------------------------------------|
@@ -448,7 +452,7 @@ Warehouse can be created using ACCOUNTADMIN, SECURITYADMIN or SYSADMIN
 |Multi-Cluster Support	|Yes									|Yes                                                        |
 |Availability			|All Snowflake editions and clouds		|Available on AWS, Azure, GCP (some memory configs AWS-only)|
 
-**Size**
+### Size
 
 |Warehouse size		|Standard (Credits/Hour)|Snowpark-Optimized (Credits/Hour)|
 |:------------------|:----------------------|:--------------------------------|
@@ -463,7 +467,7 @@ Warehouse can be created using ACCOUNTADMIN, SECURITYADMIN or SYSADMIN
 |5X-Large			|256           			|384                              |
 |6X-Large			|512           			|768                              |
 
-**Multi Cluster Warehouse**
+### Multi Cluster Warehouse
 
 A [Multi-Cluster Warehouse](https://docs.snowflake.com/en/user-guide/warehouses-multicluster) is a Snowflake virtual warehouse that can scale horizontally by adding or removing clusters of compute nodes based on demand.
 
@@ -475,7 +479,7 @@ A [Multi-Cluster Warehouse](https://docs.snowflake.com/en/user-guide/warehouses-
 |Same Size Clusters						|All clusters are the same size (e.g., Large, X-Large).         |
 |Shared Data Cache						|All clusters access the same underlying data.                  |
 
-**Scaling Policy**
+### Scaling Policy
 
 In Snowflake, the scaling policy of a warehouse determines how aggressively it adds or removes clusters in a multi-cluster warehouse setup. This affects both performance and cost efficiency.
 
