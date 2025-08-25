@@ -1,4 +1,4 @@
-{
+22{
   "data": [
     {
       "topic": "Data Loading & Unloading",
@@ -9653,16 +9653,16 @@
                 "id": 622,
                 "question": "How is enhanced authentication achieved in Snowflake? (Choose two.)",
                 "choices": {
-                  "B": "Snowflake-managed keys",
-                  "C": "Object level access control",
-                  "D": "Multi-Factor Authentication (MFA)",
-                  "E": "Federated authentication and Single Sign-On (SSO)"
+                  "A": "Snowflake-managed keys",
+                  "B": "Object level access control",
+                  "C": "Multi-Factor Authentication (MFA)",
+                  "D": "Federated authentication and Single Sign-On (SSO)"
                 },
                 "answer": [
-                  "D",
-                  "E"
+                  "C",
+                  "D"
                 ],
-                "explanation": "Enhanced authentication in Snowflake focuses on strengthening the process of verifying a user's identity\nbeyond basic username and password combinations. Multi-Factor Authentication (MFA), option D,\naccomplishes this by requiring users to provide multiple forms of verification, such as a password and a code\nfrom an authenticator app. This significantly reduces the risk of unauthorized access resulting from\ncompromised credentials. Federated authentication and Single Sign-On (SSO), option E, enhance security by\ndelegating authentication to a trusted identity provider (IdP). This allows users to log in to Snowflake using\ntheir existing organizational credentials, centralizing identity management and improving user experience\nwhile also improving security by allowing for enforcement of policies at the identity provider level. Snowflakemanaged keys (B) are primarily for data encryption, not user authentication. Object-level access control (C)\ngoverns what users can do after they've authenticated, not the authentication process itself. Thus, only MFA\nand Federated authentication/SSO directly address and enhance the initial login authentication process.\nEnhanced authentication methods are vital in cloud security as they mitigate threats such as phishing and\ncredential stuffing attacks that aim to exploit basic authentication systems. Implementing MFA and SSO align\nwith best practices for modern security in cloud platforms by adding layers of security beyond passwords and\npromoting a principle of least privilege.\nAuthoritative links for further research:\nSnowflake Documentation on MFA: https://docs.snowflake.com/en/user-guide/security-mfa\nSnowflake Documentation on Federated Authentication and SSO: https://docs.snowflake.com/en/userguide/security-fed-auth\nOWASP on Multi-Factor Authentication: https://owasp.org/www-project-top-ten/ (Search for MFA\nrecommendations)"
+                "explanation": "Enhanced authentication in Snowflake focuses on strengthening the process of verifying a user's identity\nbeyond basic username and password combinations. Multi-Factor Authentication (MFA), option C,\naccomplishes this by requiring users to provide multiple forms of verification, such as a password and a code\nfrom an authenticator app. This significantly reduces the risk of unauthorized access resulting from\ncompromised credentials. Federated authentication and Single Sign-On (SSO), option D, enhance security by\ndelegating authentication to a trusted identity provider (IdP). This allows users to log in to Snowflake using\ntheir existing organizational credentials, centralizing identity management and improving user experience\nwhile also improving security by allowing for enforcement of policies at the identity provider level. Snowflakemanaged keys (A) are primarily for data encryption, not user authentication. Object-level access control (B)\ngoverns what users can do after they've authenticated, not the authentication process itself. Thus, only MFA\nand Federated authentication/SSO directly address and enhance the initial login authentication process.\nEnhanced authentication methods are vital in cloud security as they mitigate threats such as phishing and\ncredential stuffing attacks that aim to exploit basic authentication systems. Implementing MFA and SSO align\nwith best practices for modern security in cloud platforms by adding layers of security beyond passwords and\npromoting a principle of least privilege.\nAuthoritative links for further research:\nSnowflake Documentation on MFA: https://docs.snowflake.com/en/user-guide/security-mfa\nSnowflake Documentation on Federated Authentication and SSO: https://docs.snowflake.com/en/userguide/security-fed-auth\nOWASP on Multi-Factor Authentication: https://owasp.org/www-project-top-ten/ (Search for MFA\nrecommendations)"
               },
               {
                 "id": 650,
