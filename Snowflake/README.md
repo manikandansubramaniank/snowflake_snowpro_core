@@ -30,7 +30,6 @@ This repository contains comprehensive technical documentation for **Snowflake C
 
 ## 📋 Table of Contents
 
-- [Quick Start](#-quick-start)
 - [Documentation Index](#-documentation-index)
   - [1. Introduction to Snowflake](#1-introduction-to-snowflake)
   - [2. Snowflake Architecture](#2-snowflake-architecture)
